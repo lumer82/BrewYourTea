@@ -1,0 +1,18 @@
+:host {
+  background-image: url('../../assets/images/teapot.jpg');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.timer {
+  font-family: 'Amatic SC', cursive;
+  font-size: 112px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: rgba(0,0,0,.9);
+}

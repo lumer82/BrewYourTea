@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+body {
+  background-image: url('assets/images/teapot.jpg');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
+  height: 100%;
+  width: 100%;
+  font-family: 'Ubuntu Mono', monospace;
+
+  .mat-form-field {
+    font-family: 'Ubuntu Mono', monospace;
+  }
+}

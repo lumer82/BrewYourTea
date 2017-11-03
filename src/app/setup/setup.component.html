@@ -1,0 +1,16 @@
+<div class="setup">
+  <h3>Custom</h3>
+  <div>
+    <form [formGroup]="form">
+      <mat-form-field>
+        <input matInput placeholder="Name" type="string" formControlName="name">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Time" type="string" formControlName="time">
+      </mat-form-field>
+    </form>
+    <a mat-button [routerLink]="['/timer', form.value.time]">Start<mat-icon>arrow_forward</mat-icon></a>
+  </div>
+  <h3>Presets</h3>
+  <tea-preset *ngFor="let preset of presets" [preset]="preset" (usePreset)="usePreset($event)"></tea-preset>
+</div>
