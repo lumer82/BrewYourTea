@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Preset } from './shared/model/preset.model';
 
 @Component({
   selector: 'tea-setup',

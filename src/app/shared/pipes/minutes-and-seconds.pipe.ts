@@ -4,8 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'minutesAndSeconds'
 })
 export class MinutesAndSecondsPipe implements PipeTransform {
-
-  transform(value: number): any {
+  transform(value: number, showZeroSeconds: boolean = true): any {
     if (value === 0) {
       return 'Done';
     }
@@ -14,9 +13,11 @@ export class MinutesAndSecondsPipe implements PipeTransform {
     const seconds = value % 60;
     const secondString = seconds === 1 ? 'second' : 'seconds';
     // const secondsString = seconds < 10 ? '0' + seconds : seconds.toString();
-    let result = minutes > 0 ? `${minutes} ${minuteString} ` : '';
-    result += `${seconds} ${secondString}`;
+    let result = minutes > 0 ? `${minutes} ${minuteString}` : '';
+    if (seconds !== 0 || showZeroSeconds) {
+      result += result.length > 0 ? ' ' : '';
+      result += `${seconds} ${secondString}`;
+    }
     return result;
   }
-
 }

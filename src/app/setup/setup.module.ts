@@ -1,3 +1,5 @@
+import { MinutesAndSecondsPipe } from './../shared/pipes/minutes-and-seconds.pipe';
+import { SharedModule } from './../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { TeaMaterialModule } from './../tea-material/tea-material.module';
 import { SetupComponent } from './setup.component';
@@ -12,7 +14,8 @@ import { PresetComponent } from './preset/preset.component';
     TeaMaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
   declarations: [
     SetupComponent,

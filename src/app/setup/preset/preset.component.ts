@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
+import { Preset } from '../shared/model/preset.model';
 
 @Component({
   selector: 'tea-preset',
