@@ -1,6 +1,6 @@
-<a [routerLink]="['/timer', preset.time]">
+<a [routerLink]="['/timer', preset.time]" [queryParams]="{ name: preset.name }">
   <div class="preset">
     <h4>{{preset.name}}</h4>
-    {{ preset.time | minutesAndSeconds:false }}
+    {{ preset.time }} minutes
   </div>
 </a>

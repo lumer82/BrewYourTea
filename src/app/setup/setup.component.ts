@@ -11,10 +11,10 @@ import { Preset } from './shared/model/preset.model';
 export class SetupComponent implements OnInit {
 
   presets: Array<Preset> = [
-    { name: 'Green tea', time: 120 },
-    { name: 'Black tea', time: 180 },
-    { name: 'Herbal tea', time: 300 },
-    { name: 'Fruit tea', time: 480 }
+    { name: 'Green tea', time: 2 },
+    { name: 'Black tea', time: 3 },
+    { name: 'Herbal tea', time: 5 },
+    { name: 'Fruit tea', time: 8 }
   ];
 
   form: FormGroup;
@@ -24,7 +24,7 @@ export class SetupComponent implements OnInit {
   ngOnInit() {
     this.form = this.formBuilder.group({
       name: '',
-      time: 300
+      time: 5
     });
   }
 
