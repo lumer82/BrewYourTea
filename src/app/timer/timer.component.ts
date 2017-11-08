@@ -1,8 +1,23 @@
+import { TimeParserService } from './../shared/services/time-parser.service';
 import { NotificationService } from './../notification.service';
-import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectionStrategy
+} from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { map, switchMap, takeWhile, takeUntil, withLatestFrom, filter, tap } from 'rxjs/operators';
+import {
+  map,
+  switchMap,
+  takeWhile,
+  takeUntil,
+  withLatestFrom,
+  filter,
+  tap,
+  distinctUntilChanged
+} from 'rxjs/operators';
 import { Subject } from 'rxjs/Subject';
 import { interval } from 'rxjs/observable/interval';
 
@@ -15,11 +30,21 @@ import { interval } from 'rxjs/observable/interval';
 export class TimerComponent implements OnInit, OnDestroy {
   unsubscribe$: Subject<void> = new Subject<void>();
   timer$: Observable<number>;
+  name$: Observable<string>;
 
-  constructor(private activatedRoute: ActivatedRoute, private notificationService: NotificationService) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private notificationService: NotificationService,
+    private timeParserService: TimeParserService
+  ) {}
 
   ngOnInit() {
-    const time$ = this.activatedRoute.paramMap.pipe(map(m => +m.get('time')));
+    this.name$ = this.activatedRoute.queryParamMap.pipe(map(m => m.get('name')));
+
+    const time$ = this.activatedRoute.paramMap.pipe(
+      map(m => m.get('time')),
+      map(m => this.timeParserService.parseTime(m))
+    );
 
     const interval$ = interval(1000).pipe(
       withLatestFrom(time$),
@@ -28,21 +53,23 @@ export class TimerComponent implements OnInit, OnDestroy {
     );
 
     this.timer$ = time$.pipe(
-      switchMap(() => interval$.pipe(
-        withLatestFrom(time$),
-        map(([x, time]) => time - x)
-      ))
+      switchMap(() =>
+        interval$.pipe(withLatestFrom(time$), map(([x, time]) => time - x))
+      )
     );
 
-    const finished$ = this.timer$.pipe(
-      filter(x => x === 0),
-      takeUntil(this.unsubscribe$)
-    ).subscribe(() => {
-      this.notificationService.notify('Finished', 'Hurry! Your tea steeped long enough.');
-    });
+    const finished$ = this.timer$
+      .pipe(
+        filter(x => x === 0),
+        switchMap(() => this.name$),
+        takeUntil(this.unsubscribe$))
+      .subscribe((name) => {
+        this.notificationService.notify(
+          `Finished ${name}`,
+          `Hurry! Your tea "${name}" steeped long enough.`
+        );
+      });
   }
-
-
 
   ngOnDestroy() {
     this.unsubscribe$.next();

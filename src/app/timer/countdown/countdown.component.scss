@@ -1,0 +1,27 @@
+.countdown, .wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.countdown {
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.minutes {
+  .description {
+    width: 275px;
+  }
+}
+
+.seconds {
+  .description {
+    width: 250px;
+  }
+}
+.number {
+  width: 90px;
+  text-align: end;
+  padding-right: 10px;
+}

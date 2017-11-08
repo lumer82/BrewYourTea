@@ -1,5 +1,10 @@
 <div class="timer">
-  {{timer$ | async | minutesAndSeconds }}
+  <div *ngIf="name$ | async as name" class="align-end">{{name}}</div>
+  <ng-container *ngIf="timer$ | async as timer; else done">
+    <tea-countdown [time]="timer"></tea-countdown>
+  </ng-container>
+  <ng-template #done><div class="align-end">Done</div></ng-template>
 </div>
 
 <tea-back-button></tea-back-button>
+

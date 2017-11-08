@@ -1,5 +1,5 @@
 import { RouterTestingModule } from '@angular/router/testing';
-import { BackButtonComponent } from './../back-button/back-button.component';
+import { BackButtonComponent } from './../shared/components/back-button/back-button.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 
