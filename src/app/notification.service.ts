@@ -19,7 +19,7 @@ export class NotificationService {
     /* tslint:disable-next-line:no-unused-expression */
     new Notification(title, <any>{
       body: body,
-      icon: 'assets/images/teacup.jpg',
+      icon: 'assets/images/favicon/android-chrome-192x192.png',
       requireInteraction: true
     });
   }
