@@ -19,8 +19,4 @@ export class PresetComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  watlos(): void {
-    this.useSetup.emit(this.setup);
-  }
 }
