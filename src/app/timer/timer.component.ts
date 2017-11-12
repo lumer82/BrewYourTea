@@ -1,3 +1,4 @@
+import { RecentService } from './../shared/services/recent.service';
 import { TimeParserService } from './../shared/services/time-parser.service';
 import { NotificationService } from './../notification.service';
 import {
@@ -37,11 +38,26 @@ export class TimerComponent implements OnInit, OnDestroy {
   constructor(
     private activatedRoute: ActivatedRoute,
     private notificationService: NotificationService,
-    private timeParserService: TimeParserService
+    private timeParserService: TimeParserService,
+    private recentService: RecentService
   ) {}
 
   ngOnInit() {
     this.name$ = this.activatedRoute.queryParamMap.pipe(map(m => m.get('name')));
+
+    this.activatedRoute.queryParamMap
+      .pipe(
+        filter(m => !!m.get('name')),
+        map(m => m.get('name')),
+        withLatestFrom(this.activatedRoute.paramMap.pipe(
+          filter(m => !!m.get('time')),
+          map(m => m.get('time'))
+        )),
+        map(([name, time]) => ({ name, time}))
+      )
+      .subscribe((setup) => {
+        this.recentService.addToRecent(setup);
+      });
 
     const time$ = this.activatedRoute.paramMap.pipe(
       map(m => m.get('time')),

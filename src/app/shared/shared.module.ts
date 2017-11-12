@@ -1,3 +1,4 @@
+import { RecentService } from './services/recent.service';
 import { TimeParserService } from './services/time-parser.service';
 import { RouterModule } from '@angular/router';
 import { TeaMaterialModule } from './../tea-material/tea-material.module';
@@ -13,7 +14,8 @@ import { CommonModule } from '@angular/common';
     RouterModule
   ],
   providers: [
-    TimeParserService
+    TimeParserService,
+    RecentService
   ],
   declarations: [
     MinutesAndSecondsPipe,

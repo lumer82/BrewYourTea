@@ -1,5 +1,5 @@
+import { Setup } from './../../shared/models/setup.model';
 import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
-import { Preset } from '../shared/model/preset.model';
 
 @Component({
   selector: 'tea-preset',
@@ -10,14 +10,17 @@ import { Preset } from '../shared/model/preset.model';
 export class PresetComponent implements OnInit {
 
   @Input()
-  preset: Preset;
+  setup: Setup;
 
   @Output()
-  usePreset: EventEmitter<Preset> = new EventEmitter<Preset>();
+  useSetup: EventEmitter<Setup> = new EventEmitter<Setup>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  watlos(): void {
+    this.useSetup.emit(this.setup);
+  }
 }

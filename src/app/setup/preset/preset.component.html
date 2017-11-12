@@ -1,6 +1,9 @@
-<a [routerLink]="['/timer', preset.time]" [queryParams]="{ name: preset.name }">
-  <div class="preset">
-    <h4>{{preset.name}}</h4>
-    {{ preset.time }} minutes
-  </div>
-</a>
+<div class="setup">
+  <a [routerLink]="['/timer', setup.time]" [queryParams]="{ name: setup.name }">
+    <h4>{{setup.name}}</h4>
+    {{ setup.time }}
+  </a>
+  <button mat-icon-button (click)="useSetup.emit(setup)">
+    <mat-icon>edit</mat-icon>
+  </button>
+</div>

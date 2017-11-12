@@ -9,8 +9,16 @@
         <input matInput placeholder="Time" type="string" formControlName="time">
       </mat-form-field>
     </form>
-    <a mat-button [routerLink]="['/timer', form.value.time]" [queryParams]="{ name: form.value.name }">Start<mat-icon>arrow_forward</mat-icon></a>
+    <a mat-button [routerLink]="['/timer', form.value.time]" [queryParams]="{ name: form.value.name }">Start
+      <mat-icon>arrow_forward</mat-icon>
+    </a>
   </div>
-  <h3>Presets</h3>
-  <tea-preset *ngFor="let preset of presets" [preset]="preset" (usePreset)="usePreset($event)"></tea-preset>
+  <ng-container *ngIf="recent$ | async as recent">
+    <h3 *ngIf="recent.length">Recent</h3>
+    <tea-preset *ngFor="let r of recent" [setup]="r" (useSetup)="useSetup($event)"></tea-preset>
+  </ng-container>
+  <ng-container *ngIf="(recent$ | async).length < 3">
+    <h3>Presets</h3>
+    <tea-preset *ngFor="let preset of presets" [setup]="preset" (useSetup)="useSetup($event)"></tea-preset>
+  </ng-container>
 </div>

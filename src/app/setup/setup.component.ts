@@ -1,6 +1,8 @@
+import { Observable } from 'rxjs/Observable';
+import { RecentService } from './../shared/services/recent.service';
+import { Setup } from './../shared/models/setup.model';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Preset } from './shared/model/preset.model';
 
 @Component({
   selector: 'tea-setup',
@@ -10,26 +12,31 @@ import { Preset } from './shared/model/preset.model';
 })
 export class SetupComponent implements OnInit {
 
-  presets: Array<Preset> = [
-    { name: 'Green tea', time: 2 },
-    { name: 'Black tea', time: 3 },
-    { name: 'Herbal tea', time: 5 },
-    { name: 'Fruit tea', time: 8 }
+  presets: Array<Setup> = [
+    { name: 'Green tea', time: '2 minutes' },
+    { name: 'Black tea', time: '3 minutes' },
+    { name: 'Herbal tea', time: '5 minutes' },
+    { name: 'Fruit tea', time: '8 minutes' }
   ];
 
   form: FormGroup;
+  recent$: Observable<Array<Setup>>;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private recentService: RecentService) { }
 
   ngOnInit() {
+    this.recent$ = this.recentService.recent$;
+
     this.form = this.formBuilder.group({
       name: '',
-      time: 5
+      time: '5 minutes'
     });
   }
 
-  usePreset(preset: any): void {
-
+  useSetup(setup: Setup): void {
+    this.form.patchValue({
+      name: setup.name,
+      time: setup.time
+    });
   }
-
 }
