@@ -19,7 +19,7 @@ import {
   distinctUntilChanged
 } from 'rxjs/operators';
 import { Subject } from 'rxjs/Subject';
-import { interval } from 'rxjs/observable/interval';
+import { timer } from 'rxjs/observable/timer';
 
 @Component({
   selector: 'tea-timer',
@@ -46,7 +46,7 @@ export class TimerComponent implements OnInit, OnDestroy {
       map(m => this.timeParserService.parseTime(m))
     );
 
-    const interval$ = interval(1000).pipe(
+    const interval$ = timer(0, 1000).pipe(
       withLatestFrom(time$),
       takeWhile(([x, time]) => x <= time),
       map(([x, time]) => x)
