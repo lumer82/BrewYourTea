@@ -3,7 +3,12 @@
   <ng-container *ngIf="timer$ | async as timer; else done">
     <tea-countdown [time]="timer"></tea-countdown>
   </ng-container>
-  <ng-template #done><div class="align-end">Done</div></ng-template>
+  <ng-template #done>
+    <div class="align-end done">
+      Done
+      <button mat-fab (click)="restart$.next()"><mat-icon>replay</mat-icon></button>
+    </div>
+  </ng-template>
 </div>
 
 <tea-back-button></tea-back-button>

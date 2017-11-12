@@ -7,13 +7,31 @@
 .timer {
   font-family: 'Amatic SC', cursive;
   font-size: 112px;
-  // position: absolute;
-  // right: 20px;
-  // top: 20px;
   color: rgba(0,0,0,.9);
 }
 
 .align-end {
   text-align: end;
   padding: 0 10px;
+}
+
+.done {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  button {
+    $increase-size: 24px;
+    $button-base: 58px;
+    margin-left: 10px;
+    height: $button-base + $increase-size;
+    width: $button-base + $increase-size;
+
+    mat-icon {
+      $icon-base: 24px;
+      font-size: $icon-base + $increase-size;
+      height: $icon-base + $increase-size;
+      width: $icon-base + $increase-size;
+    }
+  }
 }

@@ -1,3 +1,4 @@
+import { TeaMaterialModule } from './../tea-material/tea-material.module';
 import { SharedModule } from './../shared/shared.module';
 import { TimerComponent } from './timer.component';
 import { NgModule } from '@angular/core';
@@ -7,7 +8,8 @@ import { CountdownComponent } from './countdown/countdown.component';
 @NgModule({
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    TeaMaterialModule
   ],
   declarations: [
     TimerComponent,

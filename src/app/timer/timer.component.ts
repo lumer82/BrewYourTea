@@ -16,7 +16,8 @@ import {
   withLatestFrom,
   filter,
   tap,
-  distinctUntilChanged
+  distinctUntilChanged,
+  startWith
 } from 'rxjs/operators';
 import { Subject } from 'rxjs/Subject';
 import { timer } from 'rxjs/observable/timer';
@@ -31,6 +32,7 @@ export class TimerComponent implements OnInit, OnDestroy {
   unsubscribe$: Subject<void> = new Subject<void>();
   timer$: Observable<number>;
   name$: Observable<string>;
+  restart$: Subject<void> = new Subject<void>();
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -46,11 +48,14 @@ export class TimerComponent implements OnInit, OnDestroy {
       map(m => this.timeParserService.parseTime(m))
     );
 
-    const interval$ = timer(0, 1000).pipe(
-      withLatestFrom(time$),
-      takeWhile(([x, time]) => x <= time),
-      map(([x, time]) => x)
-    );
+    const interval$ = this.restart$.pipe(
+      startWith(null),
+      switchMap(() => timer(0, 1000).pipe(
+        withLatestFrom(time$),
+        takeWhile(([x, time]) => x <= time),
+        map(([x, time]) => x)
+      ))
+  );
 
     this.timer$ = time$.pipe(
       switchMap(() =>
