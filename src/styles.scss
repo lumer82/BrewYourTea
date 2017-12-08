@@ -1,8 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-$small-device: 320px;
-$medium-device: 1024px;
-$big-device: 1920px;
-$huge-device: 2560px;
+@import "constants";
 
 @mixin teapot-background($size, $image) {
   @media only screen and (max-device-width: $size) {

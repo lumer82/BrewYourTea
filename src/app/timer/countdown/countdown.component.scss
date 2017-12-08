@@ -1,3 +1,5 @@
+@import "../../../constants";
+
 .countdown, .wrapper {
   display: flex;
   justify-content: flex-end;
@@ -7,17 +9,27 @@
 .countdown {
   width: 100%;
   flex-wrap: wrap;
+  font-size: 75px;
+  @media (min-width: $tablet-device) {
+    font-size: inherit;
+  }
 }
 
 .minutes {
   .description {
-    width: 275px;
+    width:183px;
+    @media (min-width: $tablet-device) {
+      width: 275px;
+    }
   }
 }
 
 .seconds {
   .description {
-    width: 250px;
+    width: 183px;
+    @media (min-width: $tablet-device) {
+      width: 250px;
+    }
   }
 }
 .number {

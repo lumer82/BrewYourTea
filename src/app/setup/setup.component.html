@@ -1,6 +1,6 @@
 <div class="setup">
   <h3>Custom</h3>
-  <div>
+  <div class="inputs">
     <form [formGroup]="form">
       <mat-form-field>
         <input matInput placeholder="Name" type="string" formControlName="name">
@@ -13,12 +13,14 @@
       <mat-icon>arrow_forward</mat-icon>
     </a>
   </div>
-  <ng-container *ngIf="recent$ | async as recent">
-    <h3 *ngIf="recent.length">Recent</h3>
-    <tea-preset *ngFor="let r of recent" [setup]="r" (useSetup)="useSetup($event)"></tea-preset>
-  </ng-container>
-  <ng-container *ngIf="(recent$ | async).length < 3">
-    <h3>Presets</h3>
-    <tea-preset *ngFor="let preset of presets" [setup]="preset" (useSetup)="useSetup($event)"></tea-preset>
-  </ng-container>
+  <div class="presets">
+    <ng-container *ngIf="recent$ | async as recent">
+      <h3 *ngIf="recent.length">Recent</h3>
+      <tea-preset *ngFor="let r of recent" [setup]="r" (useSetup)="useSetup($event)"></tea-preset>
+    </ng-container>
+    <ng-container *ngIf="(recent$ | async).length < 3">
+      <h3>Presets</h3>
+      <tea-preset *ngFor="let preset of presets" [setup]="preset" (useSetup)="useSetup($event)"></tea-preset>
+    </ng-container>
+  </div>
 </div>
