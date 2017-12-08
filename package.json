@@ -5,11 +5,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build -prod",
+    "build": "ng build",
+    "build:github-pages": "ng build --prod --base-href \"https://lumer82.github.io/BrewYourTea/\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "github-pages": "ngh"
+    "github-pages": "npm run build:github-pages && ngh"
   },
   "private": true,
   "dependencies": {
