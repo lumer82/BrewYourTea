@@ -3,7 +3,7 @@
 
 @mixin teapot-background($size, $image) {
   @media only screen and (max-device-width: $size) {
-    background: url('assets/images/'+$image) no-repeat center center fixed;
+    background: url('/assets/images/'+$image) no-repeat center center fixed;
     background-size: cover;
   }
 }
@@ -16,16 +16,16 @@ html, body {
   // overflow: hidden;
   font-family: 'Ubuntu Mono', monospace;
 
-  background: url('assets/images/teapot_l3366.jpg') no-repeat center center fixed;
+}
+
+body {
+  background: url('/assets/images/teapot_l3366.jpg') no-repeat center center fixed;
   background-size: cover;
 
   @include teapot-background($huge-device, 'teapot_l2560.jpg');
   @include teapot-background($big-device, 'teapot_l1920.jpg');
   @include teapot-background($medium-device, 'teapot_l1280.jpg');
 
-}
-
-body {
   .mat-form-field {
     font-family: 'Ubuntu Mono', monospace;
   }
