@@ -15,7 +15,12 @@
   </div>
   <div class="presets">
     <ng-container *ngIf="recent$ | async as recent">
-      <h3 *ngIf="recent.length">Recent</h3>
+      <h3 *ngIf="recent.length" class="recent">Recent
+        <span>
+          <button mat-icon-button (click)="loadRecents()" matTooltip="Load recent teas" matTooltipShowDelay="500"><mat-icon>folder_open</mat-icon></button>
+          <button mat-icon-button (click)="saveRecents()" matTooltip="Save recent teas" matTooltipShowDelay="500"><mat-icon>save</mat-icon></button>
+        </span>
+      </h3>
       <tea-preset *ngFor="let r of recent" [setup]="r" (useSetup)="useSetup($event)"></tea-preset>
     </ng-container>
     <ng-container *ngIf="(recent$ | async).length < 3">

@@ -39,4 +39,12 @@ export class SetupComponent implements OnInit {
       time: setup.time
     });
   }
+
+  saveRecents(): void {
+    this.recentService.saveRecents();
+  }
+
+  loadRecents(): void {
+    this.recentService.loadRecents();
+  }
 }

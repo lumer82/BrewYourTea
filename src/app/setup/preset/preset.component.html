@@ -3,7 +3,7 @@
     <h4>{{setup.name}}</h4>
     {{ setup.time }}
   </a>
-  <button mat-icon-button (click)="useSetup.emit(setup)">
+  <button mat-icon-button (click)="useSetup.emit(setup)" matTooltip="Use for custom" matTooltipShowDelay="500">
     <mat-icon>edit</mat-icon>
   </button>
 </div>
