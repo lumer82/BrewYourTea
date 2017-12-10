@@ -21,11 +21,8 @@ export class NotificationService {
     }
 
     if ('serviceWorker' in navigator) {
-      console.log('trying serviceWorker');
       navigator.serviceWorker.getRegistration().then(registration => {
-        console.log('got registration', registration);
         if (registration) {
-          console.log('show by serviceworker');
           registration.showNotification(title, this.getNotificationOptions(body));
         } else {
           this.showLocalNotification(title, body);
@@ -37,7 +34,6 @@ export class NotificationService {
   }
 
   private showLocalNotification(title: string, body: string): void {
-    console.log('show by local notification');
     /* tslint:disable-next-line:no-unused-expression */
     new Notification(title, this.getNotificationOptions(body));
   }
