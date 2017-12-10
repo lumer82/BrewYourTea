@@ -1,6 +1,6 @@
-import { RecentService } from './../shared/services/recent.service';
-import { TimeParserService } from './../shared/services/time-parser.service';
-import { NotificationService } from './../notification.service';
+import { RecentService } from '../shared/services/recent.service';
+import { TimeParserService } from '../shared/services/time-parser.service';
+import { NotificationService } from '../notification.service';
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { ActivatedRoute } from '@angular/router';
