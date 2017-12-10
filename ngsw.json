@@ -1,0 +1,83 @@
+{
+  "configVersion": 1,
+  "index": "https://lumer82.github.io/BrewYourTea/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://lumer82.github.io/BrewYourTea/favicon.ico",
+        "https://lumer82.github.io/BrewYourTea/index.html",
+        "https://lumer82.github.io/BrewYourTea/inline.1c83df528c1b99887588.bundle.js",
+        "https://lumer82.github.io/BrewYourTea/main.92fb671120b6c026f2b6.bundle.js",
+        "https://lumer82.github.io/BrewYourTea/polyfills.4c668d3a090ce6f91801.bundle.js",
+        "https://lumer82.github.io/BrewYourTea/styles.2309e726089c903c3cbf.bundle.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "https://lumer82.github.io/BrewYourTea/assets/images/teacup.jpg",
+        "https://lumer82.github.io/BrewYourTea/assets/images/teacup.png",
+        "https://lumer82.github.io/BrewYourTea/assets/images/teapot.jpg",
+        "https://lumer82.github.io/BrewYourTea/assets/images/teapot_l1280.jpg",
+        "https://lumer82.github.io/BrewYourTea/assets/images/teapot_l1920.jpg",
+        "https://lumer82.github.io/BrewYourTea/assets/images/teapot_l2560.jpg",
+        "https://lumer82.github.io/BrewYourTea/assets/images/teapot_l3366.jpg",
+        "https://lumer82.github.io/BrewYourTea/assets/images/teapot_l640.jpg",
+        "https://lumer82.github.io/BrewYourTea/assets/images/favicon/android-chrome-192x192.png",
+        "https://lumer82.github.io/BrewYourTea/assets/images/favicon/android-chrome-512x512.png",
+        "https://lumer82.github.io/BrewYourTea/assets/images/favicon/apple-touch-icon.png",
+        "https://lumer82.github.io/BrewYourTea/assets/images/favicon/browserconfig.xml",
+        "https://lumer82.github.io/BrewYourTea/assets/images/favicon/favicon-16x16.png",
+        "https://lumer82.github.io/BrewYourTea/assets/images/favicon/favicon-32x32.png",
+        "https://lumer82.github.io/BrewYourTea/assets/images/favicon/favicon.ico",
+        "https://lumer82.github.io/BrewYourTea/assets/images/favicon/manifest.json",
+        "https://lumer82.github.io/BrewYourTea/assets/images/favicon/mstile-150x150.png",
+        "https://lumer82.github.io/BrewYourTea/assets/images/favicon/safari-pinned-tab.svg"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "fonts",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [],
+      "patterns": [
+        "https:\\/\\/fonts\\.googleapis\\.com\\/.*",
+        "https:\\/\\/fonts\\.gstatic\\.com\\/.*"
+      ]
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://lumer82.github.io/BrewYourTea/inline.1c83df528c1b99887588.bundle.js": "3c90647d7557ab7c295af23ce1611441a4e117d2",
+    "https://lumer82.github.io/BrewYourTea/assets/images/teacup.jpg": "03999a8bcc86aa2ea54c8ab6bf3b275887a0f7f3",
+    "https://lumer82.github.io/BrewYourTea/main.92fb671120b6c026f2b6.bundle.js": "994b6989805bfabbd43f1686122f26e0a2c0075e",
+    "https://lumer82.github.io/BrewYourTea/assets/images/teacup.png": "90683cb2852b5d7f604fe80b4dd41e02759a36b0",
+    "https://lumer82.github.io/BrewYourTea/polyfills.4c668d3a090ce6f91801.bundle.js": "691ba740899a978eaa8e4b8e70e934efa3f77084",
+    "https://lumer82.github.io/BrewYourTea/assets/images/teapot.jpg": "508a81f12ea7bd966e6d5677f687ffa7cb02484d",
+    "https://lumer82.github.io/BrewYourTea/styles.2309e726089c903c3cbf.bundle.css": "6bbebd9ffd585392da288f7e5dcf3686c3b773fc",
+    "https://lumer82.github.io/BrewYourTea/assets/images/teapot_l1280.jpg": "8717f5e7f8e0880ab7326fb866ccef0ece807d67",
+    "https://lumer82.github.io/BrewYourTea/favicon.ico": "eedea74ec021a3b3bbb8252a0799d8560ec1b661",
+    "https://lumer82.github.io/BrewYourTea/assets/images/teapot_l1920.jpg": "4090f176568ba03ac7f264e6b6e2e9d208180bc9",
+    "https://lumer82.github.io/BrewYourTea/index.html": "acfee69fc901ce9363134ddec0af9535aab518e6",
+    "https://lumer82.github.io/BrewYourTea/assets/images/teapot_l2560.jpg": "280f5ce114583ddce016b51a5a69c77d86231244",
+    "https://lumer82.github.io/BrewYourTea/assets/images/teapot_l3366.jpg": "d01f555cfd2dd65c6362816819d2b58347ca0513",
+    "https://lumer82.github.io/BrewYourTea/assets/images/teapot_l640.jpg": "d4d81904360567ae76658c085e8424d589723403",
+    "https://lumer82.github.io/BrewYourTea/assets/images/favicon/android-chrome-192x192.png": "79098383257e5ae6ecc43a45a56da668c9df56eb",
+    "https://lumer82.github.io/BrewYourTea/assets/images/favicon/android-chrome-512x512.png": "9d464b38cb2b996488564cbfbba48bec6298e187",
+    "https://lumer82.github.io/BrewYourTea/assets/images/favicon/apple-touch-icon.png": "609f3858efbbc4057e1cb375c57a4e534517d063",
+    "https://lumer82.github.io/BrewYourTea/assets/images/favicon/browserconfig.xml": "974aea18bda5a95802c06b80126ab1d96d91d708",
+    "https://lumer82.github.io/BrewYourTea/assets/images/favicon/favicon-16x16.png": "4c902459a50bde59d73d4a5d6d6a2ddadde7fee9",
+    "https://lumer82.github.io/BrewYourTea/assets/images/favicon/favicon-32x32.png": "88c11677a69d254beeb4e0412831be69449eca1a",
+    "https://lumer82.github.io/BrewYourTea/assets/images/favicon/favicon.ico": "eedea74ec021a3b3bbb8252a0799d8560ec1b661",
+    "https://lumer82.github.io/BrewYourTea/assets/images/favicon/manifest.json": "e8fec2b76286ddf07a2498cee0c4743d5310b77e",
+    "https://lumer82.github.io/BrewYourTea/assets/images/favicon/mstile-150x150.png": "9eafabdc7c89137f7c4b64aec9db6d3960b7349f",
+    "https://lumer82.github.io/BrewYourTea/assets/images/favicon/safari-pinned-tab.svg": "70173b362ef877e6642ba22ae3985cffa432c12e"
+  }
+}
