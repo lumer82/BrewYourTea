@@ -3,7 +3,7 @@
   "name": "Brew Your Tea",
   "description": "A handy webapp that helps to not forget your tea",
   "start_url": "index.html",
-  "theme_color": "#F3B221",
+  "theme_color": "#E84E08",
   "background_color": "#FF530D",
   "display": "standalone",
   "scope": "/",
