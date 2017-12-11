@@ -38,10 +38,11 @@ export class NotificationService {
     new Notification(title, this.getNotificationOptions(body));
   }
 
-  private getNotificationOptions(body: string): NotificationOptions & { requireInteraction: boolean, vibrate: Array<number> } {
+  private getNotificationOptions(body: string): NotificationOptions & { requireInteraction: boolean, vibrate: Array<number>, badge: string } {
     return {
       body: body,
-      icon: 'assets/images/favicon/android-chrome-192x192.png',
+      icon: 'assets/images/icons/icon-128x128.png',
+      badge: 'assets/images/icons/icon-96x96.png',
       requireInteraction: true,
       vibrate: [300, 100, 400]
     };
